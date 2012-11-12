@@ -70,7 +70,7 @@
         _score = 0;
         _oldScore = -1;
         
-        self.scoreLabel = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:32 dimensions:CGSizeMake(100, 50) hAlignment:UITextAlignmentRight];
+        self.scoreLabel = [CCLabelTTF labelWithString:@"score" fontName:@"Marker Felt" fontSize:32 dimensions:CGSizeMake(100, 50) hAlignment:UITextAlignmentRight];
 
         _scoreLabel.position = ccp(winSize.width - _scoreLabel.contentSize.width/2, _scoreLabel.contentSize.height/2);
         _scoreLabel.color = ccc3(0,0,0);
@@ -95,9 +95,7 @@
 {
   
     _targets = nil;
-  
     _projectiles = nil;
-  
     _hero = nil;
     
   
@@ -122,7 +120,7 @@
     } else {
         target = [StrongAndSlowMonster monster];
     }
-    
+    target.curHpLabel.position = target.position;
     
     // Determine where to spawn the target along the Y axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -135,6 +133,7 @@
     // and along a random position along the Y axis as calculated above
     target.position = ccp(winSize.width + (target.contentSize.width/2), actualY);
     [self addChild:target];
+    [self addChild:target.curHpLabel];
     
     // Determine speed of the target
     int minDuration = target.minMoveDuration;
@@ -317,6 +316,7 @@
                 monsterHit = YES;
                 Monster *monster = (Monster *)target;
                 monster.hp--;
+                [monster.curHpLabel setString:[NSString stringWithFormat:@"%d",monster.hp]];
                 if (monster.hp <= 0) {
                     _score ++ ;
                     [targetsToDelete addObject:target];
@@ -330,7 +330,8 @@
             [_targets removeObject:target];
             [self removeChild:target cleanup:YES];
             _projectilesDestroyed++;
-			if (_projectilesDestroyed > 30) {
+			if (_projectilesDestroyed > 10) {
+                NSLog(@"Level Up");
                 AppController *delegate = [[UIApplication sharedApplication] delegate];
                 [delegate levelComplete];
             }

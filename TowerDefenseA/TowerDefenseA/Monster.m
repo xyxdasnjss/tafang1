@@ -13,6 +13,7 @@
 @synthesize hp = _curHp;
 @synthesize minMoveDuration = _minMoveDuration;
 @synthesize maxMoveDuration = _maxMoveDuration;
+@synthesize curHpLabel = _curHpLabel;
 
 @end
 
@@ -25,6 +26,8 @@
         monster.hp = 1;
         monster.minMoveDuration = 3;
         monster.maxMoveDuration = 5;
+        monster.curHpLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",monster.hp] fontName:@"Marker Felt" fontSize:12];
+        
     }
     return monster;
     
@@ -37,10 +40,11 @@
 + (id)monster {
     
     StrongAndSlowMonster *monster = nil;
-    if ((monster = [[super alloc] initWithFile:@"Icon.png"])) {
+    if ((monster = [[super alloc] initWithFile:@"Target.png"])) {
         monster.hp = 3;
         monster.minMoveDuration = 6;
         monster.maxMoveDuration = 12;
+        monster.curHpLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",monster.hp] fontName:@"Marker Felt" fontSize:12];
     }
     return monster;
     

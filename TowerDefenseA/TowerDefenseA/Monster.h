@@ -12,11 +12,13 @@
     int _curHp;
     int _minMoveDuration;
     int _maxMoveDuration;
+    CCLabelTTF *_curHpLabel;
 }
 
 @property (nonatomic, assign) int hp;
 @property (nonatomic, assign) int minMoveDuration;
 @property (nonatomic, assign) int maxMoveDuration;
+@property (nonatomic, retain) CCLabelTTF *curHpLabel;
 
 @end
 

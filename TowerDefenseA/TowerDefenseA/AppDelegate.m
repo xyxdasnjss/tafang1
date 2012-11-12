@@ -133,6 +133,10 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+    
+    self.mainScene = [GameScene scene];
+    self.nextLevelScene = [NextLevelScene node];
+    self.gameOverScene = [GameOverScene node];
 	
 	return YES;
 }
