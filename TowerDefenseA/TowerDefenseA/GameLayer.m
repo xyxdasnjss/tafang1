@@ -13,15 +13,17 @@
 #import "AppDelegate.h"
 #import "Projectile.h"
 @implementation GameScene
+
 @synthesize layer = _layer;
 
 +(id) scene
 {
 	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
+	GameScene *scene = [GameScene node];
 	
 	// 'layer' is an autorelease object.
 	GameLayer *layer = [GameLayer node];
+    scene.layer = layer;
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -35,6 +37,12 @@
     self.layer = nil;
 }
 
+@end
+
+@interface GameLayer ()
+{
+    int i;
+}
 @end
 @implementation GameLayer
 @synthesize curBg = _curBg;
@@ -161,8 +169,16 @@
     if (sprite.tag == 1) {
         [_targets removeObject:sprite];
         
-        AppController *delegate = [[UIApplication sharedApplication] delegate];
-        [delegate loadGameOverScene];
+        i++;
+        CCLOG(@"被击中%d",i);
+        if (i==10) {
+            i = 0;
+            
+            AppController *delegate = [[UIApplication sharedApplication] delegate];
+            [delegate loadGameOverScene];
+        }
+        
+        
         
     }else if (sprite.tag == 2){
         [_projectiles removeObject:sprite];
@@ -189,13 +205,13 @@
     }
     
     // Add new bg
-    AppController *delegate = [[UIApplication sharedApplication] delegate];
-    CCSprite *bg = [CCSprite spriteWithFile:delegate.curLevel.bgImageName];
-    bg.position = ccp(240,160);
-    [self addChild:bg];
+//    AppController *delegate = [[UIApplication sharedApplication] delegate];
+//    CCSprite *bg = [CCSprite spriteWithFile:delegate.curLevel.bgImageName];
+//    bg.position = ccp(240,160);
+//    [self addChild:bg];
     
     // Store reference to current background so we can remove it on next reset
-    self.curBg = bg;
+//    self.curBg = bg;
     
     // Reset stats
     _projectilesDestroyed = 0;
