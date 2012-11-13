@@ -20,12 +20,14 @@
     int _score;
     int _oldScore;
     CCLabelTTF *_scoreLabel;
+    CCLabelTTF *_lifeLabel;
     
 }
 
 - (void)reset;
 @property (nonatomic, retain) CCSprite *curBg;
 @property (nonatomic, retain) CCLabelTTF *scoreLabel;
+@property (nonatomic, retain) CCLabelTTF *lifeLabel;
 @property (nonatomic, retain) CCSprite *nextProjectile;
 
 

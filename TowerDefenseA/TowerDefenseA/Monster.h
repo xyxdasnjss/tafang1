@@ -10,15 +10,18 @@
 
 @interface Monster : CCSprite {
     int _curHp;
+    int _totalHp;
     int _minMoveDuration;
     int _maxMoveDuration;
-    CCLabelTTF *_curHpLabel;
+    CCProgressTimer *_healthBar;
 }
 
-@property (nonatomic, assign) int hp;
+@property (nonatomic, assign) int curHp;
+@property (nonatomic, assign) int totalHp;
 @property (nonatomic, assign) int minMoveDuration;
 @property (nonatomic, assign) int maxMoveDuration;
-@property (nonatomic, retain) CCLabelTTF *curHpLabel;
+@property (nonatomic, retain) CCProgressTimer *healthBar;
+
 
 @end
 

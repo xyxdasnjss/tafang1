@@ -48,6 +48,7 @@
 @synthesize curBg = _curBg;
 @synthesize scoreLabel = _scoreLabel;
 @synthesize nextProjectile = _nextProjectile;
+@synthesize lifeLabel = _lifeLabel;
 
 
 //
@@ -83,6 +84,13 @@
         _scoreLabel.position = ccp(winSize.width - _scoreLabel.contentSize.width/2, _scoreLabel.contentSize.height/2);
         _scoreLabel.color = ccc3(0,0,0);
         [self addChild:_scoreLabel z:1];
+        
+        _lifeLabel = [CCLabelTTF labelWithString:@"life" fontName:@"Marker Felt" fontSize:32 dimensions:CGSizeMake(300, 50) hAlignment:UITextAlignmentRight];
+        _lifeLabel.position = ccp(_lifeLabel.contentSize.width*.5, winSize.height-_lifeLabel.contentSize.height*.5);
+        
+        CCLOG(@"%f,%f",_lifeLabel.position.x,_lifeLabel.position.y);
+        _lifeLabel.color = ccc3(0, 0, 0);
+        [self addChild:_lifeLabel];
         
         // Useful for taking screenshots
         //[[CCScheduler sharedScheduler] setTimeScale:0.1];
@@ -128,7 +136,15 @@
     } else {
         target = [StrongAndSlowMonster monster];
     }
-    target.curHpLabel.position = target.position;
+    
+    CCSprite *bar = [CCSprite spriteWithFile:@"health_bar_red.png"];
+    target.healthBar = [CCProgressTimer progressWithSprite:bar];
+    target.healthBar.type = kCCProgressTimerTypeBar;
+    target.healthBar.percentage = 100;
+    [target.healthBar setScale:0.5];
+    target.healthBar.position = ccp(target.position.x,(target.position.y+20));
+    [self addChild:target.healthBar z:3];
+    
     
     // Determine where to spawn the target along the Y axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -141,7 +157,7 @@
     // and along a random position along the Y axis as calculated above
     target.position = ccp(winSize.width + (target.contentSize.width/2), actualY);
     [self addChild:target];
-    [self addChild:target.curHpLabel];
+    
     
     // Determine speed of the target
     int minDuration = target.minMoveDuration;
@@ -170,7 +186,8 @@
         [_targets removeObject:sprite];
         
         i++;
-        CCLOG(@"被击中%d",i);
+
+        [self.lifeLabel setString:[NSString stringWithFormat:@"被击中%d次",i]];
         if (i==10) {
             i = 0;
             
@@ -254,8 +271,10 @@
     CGPoint shootVector = ccpSub(location, _nextProjectile.position);
     CGFloat shootAngle = ccpToAngle(shootVector);
     CGFloat cocosAngle = CC_RADIANS_TO_DEGREES(-1 * shootAngle);
-    
-    CGFloat curAngle = _hero.rotation;
+//    NSLog(@"_hero.rotation:%f",_hero.rotation);
+//    NSLog(@"rotationX:%f",_hero.rotationX);
+//    NSLog(@"rotationY:%f",_hero.rotationY);
+    CGFloat curAngle = _hero.rotation;//crash//////////////////////////////////////////
     CGFloat rotateDiff = cocosAngle - curAngle;
     if (rotateDiff > 180)
 		rotateDiff -= 360;
@@ -331,11 +350,12 @@
 //                [targetsToDelete addObject:target];
                 monsterHit = YES;
                 Monster *monster = (Monster *)target;
-                monster.hp--;
-                [monster.curHpLabel setString:[NSString stringWithFormat:@"%d",monster.hp]];
-                if (monster.hp <= 0) {
+                monster.curHp--;
+              
+                if (monster.curHp <= 0) {
                     _score ++ ;
                     [targetsToDelete addObject:target];
+                    [self removeChild:monster.healthBar cleanup:YES];
                 }
                 break;
             }
