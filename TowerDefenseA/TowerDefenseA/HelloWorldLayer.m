@@ -54,7 +54,51 @@
 		// add the label as a child to this Layer
 		[self addChild: label];
 		
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"xtz.plist"];
+        CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"xtz.png"];
+        
 		
+        CCSprite *animating = [CCSprite spriteWithSpriteFrameName:@"xtz0.jpg"];
+        [animating setPosition:ccp(200, 200)];
+        [batchNode addChild:animating];
+        [self addChild:batchNode];
+        
+        
+        CCAnimation *anim = [CCAnimation animation];
+//        [anim addSpriteFrameWithFilename:@"xtz1.jpg"];
+//        [anim addSpriteFrameWithFilename:@"xtz2.jpg"];
+//        [anim addSpriteFrameWithFilename:@"xtz3.jpg"];
+        
+        [anim addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"xtz1.jpg"]];
+        [anim addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"xtz2.jpg"]];
+        [anim addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"xtz3.jpg"]];
+        [anim addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"xtz4.jpg"]];
+        [anim addSpriteFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"xtz5.jpg"]];
+        
+        
+        anim.restoreOriginalFrame = YES;
+        anim.delayPerUnit = .5;
+        
+
+        
+        id animAction = [CCAnimate actionWithAnimation:anim];
+
+        id repeatAnimation = [CCRepeatForever actionWithAction:animAction];
+        
+        [animating runAction:repeatAnimation];
+        
+
+//        
+//        [[CCAnimationCache sharedAnimationCache] addAnimation:anim name:@"myTestAnimation"];
+//        
+//        CCAnimation *myTestAnimation = [[CCAnimationCache sharedAnimationCache] animationByName:@"myTestAnimation"];
+//
+        CCSprite *xtz0 = [CCSprite spriteWithSpriteFrameName:@"xtz0.jpg"];
+        xtz0.position = ccp(0, 0);
+        [self addChild:xtz0];
+        CCAction *moveAction = [CCMoveBy actionWithDuration:3 position:ccp(size.width, size.height)];
+        [xtz0 runAction:moveAction];
+        
 		
 		//
 		// Leaderboards and Achievements

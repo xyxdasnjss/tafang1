@@ -7,14 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		136CF48A1653C6080001A270 /* xtz0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4821653C6080001A270 /* xtz0.jpg */; };
-		136CF48B1653C6080001A270 /* xtz7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4831653C6080001A270 /* xtz7.jpg */; };
-		136CF48C1653C6080001A270 /* xtz6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4841653C6080001A270 /* xtz6.jpg */; };
-		136CF48D1653C6080001A270 /* xtz5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4851653C6080001A270 /* xtz5.jpg */; };
-		136CF48E1653C6080001A270 /* xtz4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4861653C6080001A270 /* xtz4.jpg */; };
-		136CF48F1653C6080001A270 /* xtz3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4871653C6080001A270 /* xtz3.jpg */; };
-		136CF4901653C6080001A270 /* xtz2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4881653C6080001A270 /* xtz2.jpg */; };
-		136CF4911653C6080001A270 /* xtz1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4891653C6080001A270 /* xtz1.jpg */; };
+		136CF4C71653D0290001A270 /* xtz.png in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4C51653D0290001A270 /* xtz.png */; };
+		136CF4C81653D0290001A270 /* xtz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4C61653D0290001A270 /* xtz.plist */; };
+		136CF4CB1653D7040001A270 /* RadarDish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4CA1653D7040001A270 /* RadarDish.plist */; };
 		C9735063164E184800C4731D /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9735062164E184800C4731D /* GameLayer.m */; };
 		C9735067164E20F600C4731D /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9735065164E20F600C4731D /* pew-pew-lei.caf */; };
 		C9735068164E20F600C4731D /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9735066164E20F600C4731D /* background-music-aac.caf */; };
@@ -182,14 +177,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		136CF4821653C6080001A270 /* xtz0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz0.jpg; sourceTree = "<group>"; };
-		136CF4831653C6080001A270 /* xtz7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz7.jpg; sourceTree = "<group>"; };
-		136CF4841653C6080001A270 /* xtz6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz6.jpg; sourceTree = "<group>"; };
-		136CF4851653C6080001A270 /* xtz5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz5.jpg; sourceTree = "<group>"; };
-		136CF4861653C6080001A270 /* xtz4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz4.jpg; sourceTree = "<group>"; };
-		136CF4871653C6080001A270 /* xtz3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz3.jpg; sourceTree = "<group>"; };
-		136CF4881653C6080001A270 /* xtz2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz2.jpg; sourceTree = "<group>"; };
-		136CF4891653C6080001A270 /* xtz1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xtz1.jpg; sourceTree = "<group>"; };
+		136CF4C51653D0290001A270 /* xtz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xtz.png; sourceTree = "<group>"; };
+		136CF4C61653D0290001A270 /* xtz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtz.plist; sourceTree = "<group>"; };
+		136CF4CA1653D7040001A270 /* RadarDish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RadarDish.plist; path = Plist/RadarDish.plist; sourceTree = "<group>"; };
 		C9735061164E184800C4731D /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		C9735062164E184800C4731D /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		C9735065164E20F600C4731D /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
@@ -521,6 +511,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		136CF4C91653D6D80001A270 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				136CF4CA1653D7040001A270 /* RadarDish.plist */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
 		C973552F164E418900C4731D /* libCocos2d */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,6 +939,7 @@
 				C9DADE11164FC10B0051EBB2 /* NextLevelScene.m */,
 				C9DADE13164FC9040051EBB2 /* Projectile.h */,
 				C9DADE14164FC9040051EBB2 /* Projectile.m */,
+				136CF4C91653D6D80001A270 /* Plist */,
 				C9B4F291164E1765004810A5 /* Resources */,
 				C9B4F416164E176A004810A5 /* Supporting Files */,
 			);
@@ -950,14 +949,8 @@
 		C9B4F291164E1765004810A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				136CF4821653C6080001A270 /* xtz0.jpg */,
-				136CF4831653C6080001A270 /* xtz7.jpg */,
-				136CF4841653C6080001A270 /* xtz6.jpg */,
-				136CF4851653C6080001A270 /* xtz5.jpg */,
-				136CF4861653C6080001A270 /* xtz4.jpg */,
-				136CF4871653C6080001A270 /* xtz3.jpg */,
-				136CF4881653C6080001A270 /* xtz2.jpg */,
-				136CF4891653C6080001A270 /* xtz1.jpg */,
+				136CF4C51653D0290001A270 /* xtz.png */,
+				136CF4C61653D0290001A270 /* xtz.plist */,
 				C9E814511652973700CC99AF /* health_bar_red.png */,
 				C9DADE16164FDF830051EBB2 /* bg.png */,
 				C9DADE17164FDF830051EBB2 /* bg2.png */,
@@ -1089,14 +1082,9 @@
 				C9DADE22164FDF830051EBB2 /* Target.png in Resources */,
 				C9DADE23164FDF830051EBB2 /* Target2.png in Resources */,
 				C9E814521652973700CC99AF /* health_bar_red.png in Resources */,
-				136CF48A1653C6080001A270 /* xtz0.jpg in Resources */,
-				136CF48B1653C6080001A270 /* xtz7.jpg in Resources */,
-				136CF48C1653C6080001A270 /* xtz6.jpg in Resources */,
-				136CF48D1653C6080001A270 /* xtz5.jpg in Resources */,
-				136CF48E1653C6080001A270 /* xtz4.jpg in Resources */,
-				136CF48F1653C6080001A270 /* xtz3.jpg in Resources */,
-				136CF4901653C6080001A270 /* xtz2.jpg in Resources */,
-				136CF4911653C6080001A270 /* xtz1.jpg in Resources */,
+				136CF4C71653D0290001A270 /* xtz.png in Resources */,
+				136CF4C81653D0290001A270 /* xtz.plist in Resources */,
+				136CF4CB1653D7040001A270 /* RadarDish.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

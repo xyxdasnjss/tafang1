@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Joystick.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>TowerDefenseA.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>136CF4A61653C7740001A270</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C973552C164E418900C4731D</key>
 		<dict>
 			<key>primary</key>
