@@ -39,13 +39,6 @@
         monster.minMoveDuration = 3;
         monster.maxMoveDuration = 5;
         
-//        CCSprite *bar = [CCSprite spriteWithFile:@"health_bar_red.png"];
-//        monster.healthBar = [CCProgressTimer progressWithSprite:bar];
-//        monster.healthBar.type = kCCProgressTimerTypeBar;
-//        monster.healthBar.percentage = 100;
-//        [monster.healthBar setScale:0.5];
-//        monster.healthBar.position = ccp(monster.position.x,(monster.position.y+20));
-//        [monster addChild:monster.healthBar z:3];
         
         [monster schedule:@selector(healthBarLogic:)];
         
@@ -66,13 +59,7 @@
         monster.minMoveDuration = 6;
         monster.maxMoveDuration = 12;
         
-//        CCSprite *bar = [CCSprite spriteWithFile:@"health_bar_red.png"];
-//        monster.healthBar = [CCProgressTimer progressWithSprite:bar];
-//        monster.healthBar.type = kCCProgressTimerTypeBar;
-//        monster.healthBar.percentage = 100;
-//        [monster.healthBar setScale:0.5];
-//        monster.healthBar.position = ccp(monster.position.x,(monster.position.y+20));
-//        [monster addChild:monster.healthBar z:3];
+
         
         [monster schedule:@selector(healthBarLogic:)];
     }

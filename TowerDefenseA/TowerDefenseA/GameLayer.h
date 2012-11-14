@@ -14,6 +14,7 @@
     CCSprite *_curBg;
     NSMutableArray *_targets;
     NSMutableArray *_projectiles;
+    NSMutableArray *_targetsHpBar;
     int _projectilesDestroyed;
     
     CCSprite *_nextProjectile;

@@ -63,6 +63,7 @@
 		// Initialize arrays
 		_targets = [[NSMutableArray alloc] init];
 		_projectiles = [[NSMutableArray alloc] init];
+        _targetsHpBar = [[NSMutableArray alloc]init];
 		
 		// Get the dimensions of the window for calculation purposes
 		CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -112,6 +113,7 @@
   
     _targets = nil;
     _projectiles = nil;
+    _targetsHpBar = nil;
     _hero = nil;
     
   
@@ -144,7 +146,7 @@
     [target.healthBar setScale:0.5];
     target.healthBar.position = ccp(target.position.x,(target.position.y+20));
     [self addChild:target.healthBar z:3];
-    
+    [_targetsHpBar addObject:target.healthBar];
     
     // Determine where to spawn the target along the Y axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -164,10 +166,12 @@
     int maxDuration = target.maxMoveDuration;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
+//    target.healthBar.contentSize.width/2
+    
     
     // Create the actions
     id actionMove = [CCMoveTo actionWithDuration:actualDuration
-                                        position:ccp(-target.contentSize.width/2, actualY)];
+                                        position:ccp((MAX(target.healthBar.contentSize.width/2, target.contentSize.width/2))*-1, actualY)];
     id actionMoveDone = [CCCallFuncN actionWithTarget:self
                                              selector:@selector(spriteMoveFinished:)];
     [target runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
@@ -181,13 +185,18 @@
     
     
     CCSprite *sprite = (CCSprite *)sender;
+    
      [self removeChild:sprite cleanup:YES];
+
     if (sprite.tag == 1) {
-        [_targets removeObject:sprite];
+         Monster *monster = (Monster*)sprite;
+        [_targets removeObject:monster];
+        [self removeChild:monster.healthBar cleanup:YES];
+        [_targetsHpBar removeObject:monster.healthBar];
         
         i++;
 
-        [self.lifeLabel setString:[NSString stringWithFormat:@"被击中%d次",i]];
+        [self.lifeLabel setString:[NSString stringWithFormat:@"剩余生命%d",10-i]];
         if (i==10) {
             i = 0;
             
@@ -210,10 +219,18 @@
         [self removeChild:target cleanup:YES];
     }
     [_targets removeAllObjects];
+    
+    for (CCProgressTimer *hpBar in _targetsHpBar) {
+        [self removeChild:hpBar cleanup:YES];
+    }
+    [_targetsHpBar removeAllObjects];
+    
     for (CCSprite *projectile in _projectiles) {
         [self removeChild:projectile cleanup:YES];
     }
     [_projectiles removeAllObjects];
+    
+    
     
     // Remove old bg if it exists
     if (_curBg != nil) {
@@ -242,6 +259,8 @@
     // Don't forget to reset score!  (via @Mark W)
     _score = 0;
     _oldScore = -1;
+    
+    [self.lifeLabel setString:@"init"];
     
 }
 
@@ -334,6 +353,7 @@
         BOOL monsterHit = NO;
         //需删除的 敌人
         NSMutableArray *targetsToDelete = [[NSMutableArray alloc] init];
+        NSMutableArray *targetsHpBarToDel = [[NSMutableArray alloc]init];
         for (CCSprite *target in _targets) {
             //敌人的 rect
             CGRect targetRect = CGRectMake(
@@ -347,7 +367,7 @@
                 if (![projectile shouldDamageMonster:target]) {
                     continue;
                 }
-//                [targetsToDelete addObject:target];
+
                 monsterHit = YES;
                 Monster *monster = (Monster *)target;
                 monster.curHp--;
@@ -355,7 +375,8 @@
                 if (monster.curHp <= 0) {
                     _score ++ ;
                     [targetsToDelete addObject:target];
-                    [self removeChild:monster.healthBar cleanup:YES];
+                    [targetsHpBarToDel addObject:monster.healthBar];
+//                    [self removeChild:monster.healthBar cleanup:YES];
                 }
                 break;
             }
@@ -365,6 +386,10 @@
         for (CCSprite *target in targetsToDelete) {
             [_targets removeObject:target];
             [self removeChild:target cleanup:YES];
+            Monster *monster = (Monster *)target;
+            [_targetsHpBar removeObject:monster.healthBar];
+            [self removeChild:monster.healthBar cleanup:YES];
+            
             _projectilesDestroyed++;
 			if (_projectilesDestroyed > 10) {
                 NSLog(@"Level Up");
@@ -372,6 +397,8 @@
                 [delegate levelComplete];
             }
         }
+        
+        
         
         if (monsterHit) {
             [[SimpleAudioEngine sharedEngine] playEffect:@"explosion.caf"];
