@@ -10,6 +10,15 @@
 		136CF4C71653D0290001A270 /* xtz.png in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4C51653D0290001A270 /* xtz.png */; };
 		136CF4C81653D0290001A270 /* xtz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4C61653D0290001A270 /* xtz.plist */; };
 		136CF4CB1653D7040001A270 /* RadarDish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4CA1653D7040001A270 /* RadarDish.plist */; };
+		13B583471655085200B7F67A /* health_bar_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 13B583461655085200B7F67A /* health_bar_green.png */; };
+		13C777D01654B69C00A51E2F /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777BE1654B69C00A51E2F /* ColoredCircleSprite.m */; };
+		13C777D11654B69C00A51E2F /* ColoredSquareSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777C01654B69C00A51E2F /* ColoredSquareSprite.m */; };
+		13C777D21654B69C00A51E2F /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777C31654B69C00A51E2F /* SneakyJoystickSkinnedBase.m */; };
+		13C777D31654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777C51654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.m */; };
+		13C777D41654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777C71654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.m */; };
+		13C777D51654B69C00A51E2F /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777CB1654B69C00A51E2F /* SneakyButtonSkinnedBase.m */; };
+		13C777D61654B69C00A51E2F /* SneakyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777CD1654B69C00A51E2F /* SneakyButton.m */; };
+		13C777D71654B69C00A51E2F /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777CF1654B69C00A51E2F /* SneakyJoystick.m */; };
 		C9735063164E184800C4731D /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9735062164E184800C4731D /* GameLayer.m */; };
 		C9735067164E20F600C4731D /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9735065164E20F600C4731D /* pew-pew-lei.caf */; };
 		C9735068164E20F600C4731D /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9735066164E20F600C4731D /* background-music-aac.caf */; };
@@ -180,6 +189,23 @@
 		136CF4C51653D0290001A270 /* xtz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xtz.png; sourceTree = "<group>"; };
 		136CF4C61653D0290001A270 /* xtz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtz.plist; sourceTree = "<group>"; };
 		136CF4CA1653D7040001A270 /* RadarDish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RadarDish.plist; path = Plist/RadarDish.plist; sourceTree = "<group>"; };
+		13B583461655085200B7F67A /* health_bar_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_bar_green.png; sourceTree = "<group>"; };
+		13C777BD1654B69C00A51E2F /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredCircleSprite.h; sourceTree = "<group>"; };
+		13C777BE1654B69C00A51E2F /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredCircleSprite.m; sourceTree = "<group>"; };
+		13C777BF1654B69C00A51E2F /* ColoredSquareSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredSquareSprite.h; sourceTree = "<group>"; };
+		13C777C01654B69C00A51E2F /* ColoredSquareSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredSquareSprite.m; sourceTree = "<group>"; };
+		13C777C21654B69C00A51E2F /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		13C777C31654B69C00A51E2F /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
+		13C777C41654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedDPadExample.h; sourceTree = "<group>"; };
+		13C777C51654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedDPadExample.m; sourceTree = "<group>"; };
+		13C777C61654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedJoystickExample.h; sourceTree = "<group>"; };
+		13C777C71654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedJoystickExample.m; sourceTree = "<group>"; };
+		13C777CA1654B69C00A51E2F /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		13C777CB1654B69C00A51E2F /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
+		13C777CC1654B69C00A51E2F /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		13C777CD1654B69C00A51E2F /* SneakyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
+		13C777CE1654B69C00A51E2F /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		13C777CF1654B69C00A51E2F /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		C9735061164E184800C4731D /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		C9735062164E184800C4731D /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		C9735065164E20F600C4731D /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
@@ -517,6 +543,53 @@
 				136CF4CA1653D7040001A270 /* RadarDish.plist */,
 			);
 			name = Plist;
+			sourceTree = "<group>";
+		};
+		13C777BC1654B69C00A51E2F /* SneakyJoystick */ = {
+			isa = PBXGroup;
+			children = (
+				13C777BD1654B69C00A51E2F /* ColoredCircleSprite.h */,
+				13C777BE1654B69C00A51E2F /* ColoredCircleSprite.m */,
+				13C777BF1654B69C00A51E2F /* ColoredSquareSprite.h */,
+				13C777C01654B69C00A51E2F /* ColoredSquareSprite.m */,
+				13C777C11654B69C00A51E2F /* Skinning */,
+				13C777C81654B69C00A51E2F /* SneakyButton */,
+				13C777CE1654B69C00A51E2F /* SneakyJoystick.h */,
+				13C777CF1654B69C00A51E2F /* SneakyJoystick.m */,
+			);
+			path = SneakyJoystick;
+			sourceTree = "<group>";
+		};
+		13C777C11654B69C00A51E2F /* Skinning */ = {
+			isa = PBXGroup;
+			children = (
+				13C777C21654B69C00A51E2F /* SneakyJoystickSkinnedBase.h */,
+				13C777C31654B69C00A51E2F /* SneakyJoystickSkinnedBase.m */,
+				13C777C41654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.h */,
+				13C777C51654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.m */,
+				13C777C61654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.h */,
+				13C777C71654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.m */,
+			);
+			path = Skinning;
+			sourceTree = "<group>";
+		};
+		13C777C81654B69C00A51E2F /* SneakyButton */ = {
+			isa = PBXGroup;
+			children = (
+				13C777C91654B69C00A51E2F /* Skinning */,
+				13C777CC1654B69C00A51E2F /* SneakyButton.h */,
+				13C777CD1654B69C00A51E2F /* SneakyButton.m */,
+			);
+			path = SneakyButton;
+			sourceTree = "<group>";
+		};
+		13C777C91654B69C00A51E2F /* Skinning */ = {
+			isa = PBXGroup;
+			children = (
+				13C777CA1654B69C00A51E2F /* SneakyButtonSkinnedBase.h */,
+				13C777CB1654B69C00A51E2F /* SneakyButtonSkinnedBase.m */,
+			);
+			path = Skinning;
 			sourceTree = "<group>";
 		};
 		C973552F164E418900C4731D /* libCocos2d */ = {
@@ -921,6 +994,7 @@
 		C9B4F290164E1764004810A5 /* TowerDefenseA */ = {
 			isa = PBXGroup;
 			children = (
+				13C777BC1654B69C00A51E2F /* SneakyJoystick */,
 				C9B4F41A164E176A004810A5 /* AppDelegate.h */,
 				C9B4F41B164E176A004810A5 /* AppDelegate.m */,
 				C9B4F41D164E176A004810A5 /* HelloWorldLayer.h */,
@@ -951,6 +1025,7 @@
 			children = (
 				136CF4C51653D0290001A270 /* xtz.png */,
 				136CF4C61653D0290001A270 /* xtz.plist */,
+				13B583461655085200B7F67A /* health_bar_green.png */,
 				C9E814511652973700CC99AF /* health_bar_red.png */,
 				C9DADE16164FDF830051EBB2 /* bg.png */,
 				C9DADE17164FDF830051EBB2 /* bg2.png */,
@@ -1085,6 +1160,7 @@
 				136CF4C71653D0290001A270 /* xtz.png in Resources */,
 				136CF4C81653D0290001A270 /* xtz.plist in Resources */,
 				136CF4CB1653D7040001A270 /* RadarDish.plist in Resources */,
+				13B583471655085200B7F67A /* health_bar_green.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,6 +1293,14 @@
 				C9DADE0E164FBE950051EBB2 /* Level.m in Sources */,
 				C9DADE12164FC10B0051EBB2 /* NextLevelScene.m in Sources */,
 				C9DADE15164FC9040051EBB2 /* Projectile.m in Sources */,
+				13C777D01654B69C00A51E2F /* ColoredCircleSprite.m in Sources */,
+				13C777D11654B69C00A51E2F /* ColoredSquareSprite.m in Sources */,
+				13C777D21654B69C00A51E2F /* SneakyJoystickSkinnedBase.m in Sources */,
+				13C777D31654B69C00A51E2F /* SneakyJoystickSkinnedDPadExample.m in Sources */,
+				13C777D41654B69C00A51E2F /* SneakyJoystickSkinnedJoystickExample.m in Sources */,
+				13C777D51654B69C00A51E2F /* SneakyButtonSkinnedBase.m in Sources */,
+				13C777D61654B69C00A51E2F /* SneakyButton.m in Sources */,
+				13C777D71654B69C00A51E2F /* SneakyJoystick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

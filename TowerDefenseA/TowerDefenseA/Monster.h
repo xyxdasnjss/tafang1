@@ -14,6 +14,7 @@
     int _minMoveDuration;
     int _maxMoveDuration;
     CCProgressTimer *_healthBar;
+    //http://blog.sina.com.cn/s/blog_66116bd90100zvkn.html
 }
 
 @property (nonatomic, assign) int curHp;

@@ -14,6 +14,14 @@
 #import "AppDelegate.h"
 #import "GameLayer.h"
 
+#import "SneakyJoystick.h"
+#import "SneakyJoystickSkinnedJoystickExample.h"
+#import "SneakyJoystickSkinnedDPadExample.h"
+#import "SneakyButton.h"
+#import "SneakyButtonSkinnedBase.h"
+#import "ColoredCircleSprite.h"
+
+
 #pragma mark - HelloWorldLayer
 
 // HelloWorldLayer implementation
@@ -99,7 +107,54 @@
         CCAction *moveAction = [CCMoveBy actionWithDuration:3 position:ccp(size.width, size.height)];
         [xtz0 runAction:moveAction];
         
+        
+        
+        
+        
+        SneakyJoystickSkinnedBase *leftJoy = [[SneakyJoystickSkinnedBase alloc] init];
+		leftJoy.position = ccp(64,64);
+		leftJoy.backgroundSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:64];
+		leftJoy.thumbSprite = [ColoredCircleSprite circleWithColor:ccc4(0, 0, 255, 200) radius:32];
+		leftJoy.joystick = [[SneakyJoystick alloc] initWithRect:CGRectMake(0,0,128,128)];
+		leftJoystick = leftJoy.joystick;
+		[self addChild:leftJoy];
 		
+		SneakyButtonSkinnedBase *rightBut = [[SneakyButtonSkinnedBase alloc] init];
+		rightBut.position = ccp(256,32);
+		rightBut.defaultSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 255, 255, 128) radius:32];
+		rightBut.activatedSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 255, 255, 255) radius:32];
+		rightBut.pressSprite = [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 255) radius:32];
+		rightBut.button = [[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)];
+		rightButton = rightBut.button;
+		rightButton.isToggleable = YES;
+		[self addChild:rightBut];
+        
+        
+        
+        spriteBk = [CCSprite spriteWithFile:@"health_bar_green.png"];
+        [self addChild:spriteBk z:2];
+        spriteBk.position = ccp(size.width / 2,20);
+        spriteValue = [CCSprite spriteWithFile:@"health_bar_red.png"];
+        spritecontentSizeWidth = spriteValue.contentSize.width;
+        spritecontentSizeHeight = spriteValue.contentSize.height;
+        [self addChild:spriteValue z:3];
+        spriteValue.anchorPoint = ccp(0,0.5);
+        spriteValue.position = ccp(size.width / 2 ,20);
+		
+        
+        
+//        [self removeChild:spriteValue cleanup:true];
+//        spriteValue = nil;
+//        CGRect rect;
+//        rect.origin = ccp(0,0);
+//        rect.size.width = spritecontentSizeWidth * (30 / 100);
+//        rect.size.height = spritecontentSizeHeight;
+//        spriteValue = [CCSprite spriteWithFile:@"health_bar_red.png" rect:rect];
+//        [self addChild:spriteValue z:3];
+//        spriteValue.anchorPoint = ccp(0,0.5);
+//        spriteValue.position = ccp(size.width / 2 ,20);
+//        i = 0;
+        
 		//
 		// Leaderboards and Achievements
 		//
@@ -132,10 +187,41 @@
 		
 		// Add the menu to the layer
 		[self addChild:menu];
+        
+        [self scheduleUpdate];
 
 	}
 	return self;
 }
+
+- (void) update: (ccTime) delta{
+    
+//    CGPoint pos = sprite.position;
+//    pos.x = pos.x + leftJoystick.velocity.x;
+//    pos.y = pos.y + leftJoystick.velocity.y;
+//    sprite.position = pos;
+    
+    [self removeChild:spriteValue cleanup:true];
+    spriteValue = nil;
+    CGRect rect;
+    rect.origin = ccp(0,0);
+    
+    i = i+ leftJoystick.velocity.x;
+    if (i>1) {
+        i=0;
+    }else if(i<0){
+        i = 0;
+    }
+    rect.size.width = spritecontentSizeWidth * i;
+    rect.size.height = spritecontentSizeHeight;
+    spriteValue = [CCSprite spriteWithFile:@"health_bar_red.png" rect:rect];
+    [self addChild:spriteValue z:3];
+    spriteValue.anchorPoint = ccp(0,0.5);
+    CGSize  size = [[CCDirector sharedDirector] winSize];
+    spriteValue.position = ccp(size.width / 2 ,20);
+    
+}
+
 
 // on "dealloc" you need to release all your retained objects
 
