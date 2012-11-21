@@ -10,6 +10,7 @@
 		136CF4C71653D0290001A270 /* xtz.png in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4C51653D0290001A270 /* xtz.png */; };
 		136CF4C81653D0290001A270 /* xtz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4C61653D0290001A270 /* xtz.plist */; };
 		136CF4CB1653D7040001A270 /* RadarDish.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136CF4CA1653D7040001A270 /* RadarDish.plist */; };
+		13B52B671659107000B7044C /* NTProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B52B661659107000B7044C /* NTProgressView.m */; };
 		13B583471655085200B7F67A /* health_bar_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 13B583461655085200B7F67A /* health_bar_green.png */; };
 		13C777D01654B69C00A51E2F /* ColoredCircleSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777BE1654B69C00A51E2F /* ColoredCircleSprite.m */; };
 		13C777D11654B69C00A51E2F /* ColoredSquareSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C777C01654B69C00A51E2F /* ColoredSquareSprite.m */; };
@@ -189,6 +190,8 @@
 		136CF4C51653D0290001A270 /* xtz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xtz.png; sourceTree = "<group>"; };
 		136CF4C61653D0290001A270 /* xtz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtz.plist; sourceTree = "<group>"; };
 		136CF4CA1653D7040001A270 /* RadarDish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RadarDish.plist; path = Plist/RadarDish.plist; sourceTree = "<group>"; };
+		13B52B651659107000B7044C /* NTProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTProgressView.h; sourceTree = "<group>"; };
+		13B52B661659107000B7044C /* NTProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTProgressView.m; sourceTree = "<group>"; };
 		13B583461655085200B7F67A /* health_bar_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_bar_green.png; sourceTree = "<group>"; };
 		13C777BD1654B69C00A51E2F /* ColoredCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredCircleSprite.h; sourceTree = "<group>"; };
 		13C777BE1654B69C00A51E2F /* ColoredCircleSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredCircleSprite.m; sourceTree = "<group>"; };
@@ -959,6 +962,8 @@
 		C9B4F26F164E1764004810A5 = {
 			isa = PBXGroup;
 			children = (
+				13B52B651659107000B7044C /* NTProgressView.h */,
+				13B52B661659107000B7044C /* NTProgressView.m */,
 				C9B4F290164E1764004810A5 /* TowerDefenseA */,
 				C973552F164E418900C4731D /* libCocos2d */,
 				C9B4F27D164E1764004810A5 /* Frameworks */,
@@ -1301,6 +1306,7 @@
 				13C777D51654B69C00A51E2F /* SneakyButtonSkinnedBase.m in Sources */,
 				13C777D61654B69C00A51E2F /* SneakyButton.m in Sources */,
 				13C777D71654B69C00A51E2F /* SneakyJoystick.m in Sources */,
+				13B52B671659107000B7044C /* NTProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1411,6 +1417,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1431,6 +1438,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
